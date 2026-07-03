@@ -13,8 +13,8 @@ void setup() {
   Serial.begin(9600);
 }
 void loop() {
-  int delayVal = analogRead(potPin);
-
+int rawVal = analogRead(potPin);
+int delayVal = constrain(rawVal, 50, 1000);
   digitalWrite(13, HIGH);
   delay(delayVal);
   digitalWrite(13, LOW);
