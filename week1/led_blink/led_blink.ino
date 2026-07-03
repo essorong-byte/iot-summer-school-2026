@@ -1,15 +1,22 @@
+/**
+ * @file led_blink.ino
+ * @author essorong
+ * @date July 2026
+ * @brief Dynamic potentiometer-controlled LED blink system with logging metrics.
+ */
+
 unsigned long blinkCount = 0;
-const int potPin = A0; // Potentiometer wiper terminal connected to Analog Pin 0
+const int potPin = A0;
 
 void setup() {
   pinMode(13, OUTPUT);
   Serial.begin(9600);
 }
 void loop() {
-  int delayVal = analogRead(potPin); // Read raw analog data (0 to 1023)
+  int delayVal = analogRead(potPin);
 
   digitalWrite(13, HIGH);
-  delay(delayVal); // Use potentiometer reading as the delay time
+  delay(delayVal);
   digitalWrite(13, LOW);
   delay(delayVal);
 
